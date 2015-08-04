@@ -1,8 +1,8 @@
 #!/bin/sh
-## this is unnecessary, use wwuseradd username -p password instead
-useradd $@
-su $1
-logout
+## usage: cmd username passwd
+## can be replaced by wwuseradd?
+useradd $1
+echo $2 | passwd $1 --stdin
 wwsh -y file import /etc/passwd
 wwsh -y file import /etc/group
 wwsh -y file import /etc/shadow
