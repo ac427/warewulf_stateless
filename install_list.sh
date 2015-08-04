@@ -7,8 +7,6 @@ wget http://mirrors.mit.edu/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -Uvh epel-release-6-8.noarch.rpm
 yum install pdsh
 
-chkconfig iptables off
-
 ## disable selinux
 sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
 
@@ -19,5 +17,12 @@ yum install warewulf-provision warewulf-cluster warewulf-provision-server warewu
 ## edit /etc/warewulf/vnfs.conf, uncomment hybridpath= ...
 echo turnning on hybridpath in /etc/warewulf/vnfs.conf ...
 sed -i '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
+
+chkconfig iptables off
+chkconfig mysqld on
+chkconfig nfs on
+chkconfig ntpd on
+chkconfig xinetd on
+chkconfig tftp on
 
 reboot
