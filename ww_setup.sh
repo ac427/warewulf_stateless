@@ -1,5 +1,5 @@
 #!/bin/sh
-## first init, vnfs will fail, but will set /etc/fstab correct
+## first init, vnfs will fail, but will set /etc/fstab correct, wierd?
 wwinit ALL
 
 echo warewulf making chroot ... 
