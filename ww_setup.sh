@@ -1,4 +1,6 @@
 #!/bin/sh
+wwinit ALL
+
 echo warewulf making chroot ... 
 wwmkchroot centos-6 /var/chroots/centos-6
 
