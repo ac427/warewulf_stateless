@@ -10,5 +10,4 @@ wwsh -y provision set --fileadd passwd,group,shadow
 wwsh file sync
 
 ## wait many(3-5?) minuts for the account to take effect in all nodes
-## will have issue file ownership=nobody if loged in from compute node
-## no issue if ssh from master to compute node
+## FIX ME:some nodes have issue file ownership=nobody 
