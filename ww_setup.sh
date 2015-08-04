@@ -1,5 +1,6 @@
 #!/bin/sh
-wwinit ALL
+## first init, vnfs will fail, but will set /etc/fstab correct
+##wwinit ALL
 
 echo warewulf making chroot ... 
 wwmkchroot centos-6 /var/chroots/centos-6
