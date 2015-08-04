@@ -5,3 +5,5 @@ for i in n{$1..$2}; do
 done > /etc/ssh/ssh_known_hosts
 
 cp /etc/ssh/ssh_known_hosts /var/chroots/centos-6/etc/
+
+## rebuild image or sync file to take effect on compute nodes
