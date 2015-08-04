@@ -19,10 +19,5 @@ echo turnning on hybridpath in /etc/warewulf/vnfs.conf ...
 sed -i '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
 
 chkconfig iptables off
-chkconfig mysqld on
-chkconfig nfs on
-chkconfig ntpd on
-chkconfig xinetd on
-chkconfig tftp on
 
 reboot
