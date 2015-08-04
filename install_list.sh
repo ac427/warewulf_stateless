@@ -6,6 +6,18 @@ yum install httpd dhcp tftp-server mod_perl wget tcpdump emacs nfs-utils ntp man
 wget http://mirrors.mit.edu/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -Uvh epel-release-6-8.noarch.rpm
 yum install pdsh
+
 chkconfig iptables off
+
+## disable selinux
 sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
+
+echo downloading and installing warewulf
+wget http://warewulf.lbl.gov/downloads/repo/warewulf-rhel6.repo -O /etc/yum.repos.d/warewulf-rhel6.repo
+yum install warewulf-provision warewulf-cluster warewulf-provision-server warewulf-vnfs 
+
+## edit /etc/warewulf/vnfs.conf, uncomment hybridpath= ...
+echo turnning on hybridpath in /etc/warewulf/vnfs.conf ...
+sed -i '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
+
 reboot
