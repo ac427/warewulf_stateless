@@ -7,5 +7,5 @@
 2. run install_list.sh, will reboot 
 3. run ww_setup.sh, wait
 4. start compute nodes one by one
-5. run add_ssh.sh
+5. run add_ssh_key.sh and rebuild vnfs
 6. add user add_user.sh
