@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## usage: cmd 01 03
 for i in n{$1 .. $2}; do
   ssh-keyscan $i
