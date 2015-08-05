@@ -3,7 +3,6 @@ automake
 binutils
 bison
 bzip2-devel
-bzip2-devel
 curl
 db4-devel
 flex
@@ -22,7 +21,6 @@ gmp-devel
 jline
 jpackage-utils
 kpathsea
-lcms-libs
 lcms-libs
 libasyncns
 libcurl
@@ -64,6 +62,4 @@ tmpwatch
 ttmkfdir
 tzdata-java
 xz-devel
-xz-devel
-zlib-devel
 zlib-devel
