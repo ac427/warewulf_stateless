@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## usage: cmd username passwd
 ## can be replaced by wwuseradd?
 useradd $1
