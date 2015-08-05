@@ -5,7 +5,6 @@ bison
 bzip2-devel
 db4-devel
 flex
-fltk
 gcc
 gcc-c++
 gcc-gfortran
