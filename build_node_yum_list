@@ -50,6 +50,8 @@ qhull
 qrupdate
 readline
 readline-devel
+redhat-rpm-config
+rpm-build
 sqlite-devel
 suitesparse
 tcl
