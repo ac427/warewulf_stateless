@@ -1,6 +1,6 @@
 #!/bin/bash
-## usage: cmd 01 03
-for i in n{$1..$2}; do
+## usage: cmd n01 n02 n03 ... or cmd n{01..09}
+for i in $@ ; do
   ssh-keyscan $i
 done > /etc/ssh/ssh_known_hosts
 
