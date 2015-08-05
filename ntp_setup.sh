@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#yum --tolerant --installroot /var/chroots/centos-6 -y install ntp
+yum --tolerant --installroot /var/chroots/centos-6 -y install ntp
 
 cat > /var/chroots/centos-6/etc/ntp.conf << EOF
 driftfile /var/lib/ntp/drift
