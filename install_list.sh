@@ -7,10 +7,10 @@ wget http://mirrors.mit.edu/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -Uvh epel-release-6-8.noarch.rpm
 yum -y install pdsh
 
-## disable selinux
+echo disabling Selinux ...
 sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
 
-echo downloading and installing warewulf
+echo downloading and installing warewulf ...
 wget http://warewulf.lbl.gov/downloads/repo/warewulf-rhel6.repo -O /etc/yum.repos.d/warewulf-rhel6.repo
 yum -y install warewulf-provision warewulf-cluster warewulf-provision-server warewulf-vnfs 
 
