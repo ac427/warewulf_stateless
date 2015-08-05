@@ -3,7 +3,6 @@ automake
 binutils
 bison
 bzip2-devel
-curl
 db4-devel
 flex
 fltk
