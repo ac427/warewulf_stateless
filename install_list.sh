@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ##install list on provision node
 yum -y groupinstall "Development tools"
 yum -y groupinstall "MySQL Database server"
