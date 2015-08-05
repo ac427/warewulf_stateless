@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## first init, vnfs will fail, but will set /etc/fstab correct, wierd?
 wwinit ALL
 
