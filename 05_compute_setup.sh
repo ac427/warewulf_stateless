@@ -17,7 +17,7 @@ cp /etc/shadow /var/chroots/centos-6/etc/shadow
 cp /etc/munge/munge.key /var/chroots/centos-6/etc/munge/munge.key
 chown munge:munge /var/chroots/centos-6/etc/munge/munge.key
 
-mkdir /var/chroots/centos-6/var/log/munge
+mkdir -p /var/chroots/centos-6/var/log/munge
 chown munge:munge /var/chroots/centos-6/var/log/munge
 
 cat >> /var/chroots/centos-6/etc/rc.local << EOF
