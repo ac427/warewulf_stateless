@@ -25,9 +25,5 @@ chkconfig munge on
 service munge start
 EOF
 
-## install Lmod in /opt, copy script to /etc and image /etc
-
-## 
-
 ## rebuild image 
 #wwvnfs -y --chroot /var/chroots/centos-6
