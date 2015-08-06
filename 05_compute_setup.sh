@@ -17,6 +17,7 @@ cp /etc/shadow /var/chroots/centos-6/etc/shadow
 cp /etc/munge/munge.key /var/chroots/centos-6/etc/munge/munge.key
 chown munge:munge /var/chroots/centos-6/etc/munge/munge.key
 
+## /var/log is excluded in image, so need to create it when booting
 cat >> /var/chroots/centos-6/etc/rc.local << EOF
 mkdir -p /var/log/munge
 chown munge:munge /var/log/munge
