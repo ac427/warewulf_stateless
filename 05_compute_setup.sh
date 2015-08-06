@@ -10,10 +10,15 @@ service munge start
 echo testing  munge ...
 munge -n | unmunge 
 
-cp /etc/munge/munge.key /var/chroots/centos-6/etc/munge/munge.key
 cp /etc/passwd /var/chroots/centos-6/etc/passwd
 cp /etc/group /var/chroots/centos-6/etc/group
 cp /etc/shadow /var/chroots/centos-6/etc/shadow
+
+cp /etc/munge/munge.key /var/chroots/centos-6/etc/munge/munge.key
+chown munge:munge /var/chroots/centos-6/etc/munge/munge.key
+
+mkdir /var/chroots/centos-6/var/log/munge
+chown munge:munge /var/chroots/centos-6/var/log/munge
 
 cat >> /var/chroots/centos-6/etc/rc.local << EOF
 chkconfig munge on
