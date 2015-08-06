@@ -15,3 +15,10 @@ git clone https://github.com/TACC/Lmod
 cd Lmod
 ./configure --prefix=/opt/apps
 make install
+
+ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/modules.sh
+ln -s /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/modules.csh
+
+cp /etc/profile.d/modules.* /var/chroots/centos-6/etc/profile.d
+
+## rebuild image
