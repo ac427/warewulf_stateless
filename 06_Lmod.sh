@@ -21,7 +21,7 @@ ln -s /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/modules.csh
 
 ## standard set of module
 cat > /opt/apps/modulefiles/Core/StdEnv.lua << EOF
-load("")
+load("lmod")
 EOF
 
 cat > /etc/profile.d/z00_StdEnv.sh << EOF
