@@ -40,6 +40,7 @@ if ( ! $?__Init_Default_Modules || ! $?LD_LIBRARY_PATH ) then
   setenv __Init_Default_Modules 1
 endif
 EOF
+
 cp /etc/profile.d/modules.* /var/chroots/centos-6/etc/profile.d
 cp /etc/profile.d/z00_.* /var/chroots/centos-6/etc/profile.d
 
