@@ -21,6 +21,7 @@ ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/modules.sh
 ln -s /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/modules.csh
 
 ## standard set of module
+mkdir -p /opt/apps/modulefiles/Core
 cat > /opt/apps/modulefiles/Core/StdEnv.lua << EOF
 load("lmod")
 EOF
@@ -43,6 +44,6 @@ endif
 EOF
 
 cp /etc/profile.d/modules.* /var/chroots/centos-6/etc/profile.d
-cp /etc/profile.d/z00_.* /var/chroots/centos-6/etc/profile.d
+cp /etc/profile.d/z00_* /var/chroots/centos-6/etc/profile.d
 
 ## rebuild image
