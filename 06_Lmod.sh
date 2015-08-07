@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## system have an old lua without posix and lfs module 
+yum -y install tcl
 wget http://sourceforge.net/projects/lmod/files/lua-5.1.4.8.tar.gz/download
 tar xvzf download
 cd lua-5.1.4.8
