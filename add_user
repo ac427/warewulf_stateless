@@ -4,7 +4,7 @@
 useradd $1
 echo $2 | passwd $1 --stdin
 
-# this will setup ww .ssh for the user
+# this will setup ww .ssh for the user with cluster-env
 su -u $1 -c 'date'
 
 wwsh -y file import /etc/passwd
