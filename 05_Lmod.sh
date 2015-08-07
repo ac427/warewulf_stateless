@@ -11,8 +11,10 @@ ln -s /opt/apps/lua/5.1.4 /opt/apps/lua/lua
 ln -s /opt/apps/lua/lua/bin/lua /usr/local/bin
 
 ## lmod
-git clone https://github.com/TACC/Lmod
-cd Lmod
+## git clone https://github.com/TACC/Lmod
+wget https://github.com/TACC/Lmod/archive/6.0.8.tar.gz
+tar xvzf 6.0.8.tar.gz
+cd Lmod-6.0.8
 ./configure --prefix=/opt/apps
 make install
 
