@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## add a testing user
+./add_user opera opera1122
+
 ## install gcc to compute nodes 
 yum --tolerant --installroot /var/chroots/centos-6 -y install `paste -s compute_node_yum_list`
 
