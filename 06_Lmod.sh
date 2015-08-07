@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ## system have an old lua without posix and lfs module 
-yum -y install tcl
 wget http://sourceforge.net/projects/lmod/files/lua-5.1.4.8.tar.gz/download
 tar xvzf download
 cd lua-5.1.4.8
@@ -17,8 +16,9 @@ cd Lmod
 ./configure --prefix=/opt/apps
 make install
 
-ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/modules.sh
-ln -s /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/modules.csh
+## ln -s or cp??
+cp /opt/apps/lmod/lmod/init/profile /etc/profile.d/modules.sh
+cp /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/modules.csh
 
 ## standard set of module
 mkdir -p /opt/apps/modulefiles/Core
