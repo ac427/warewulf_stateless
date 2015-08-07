@@ -10,6 +10,8 @@ wwmkchroot centos-6 /var/chroots/centos-6
 wwvnfs --chroot /var/chroots/centos-6
 
 echo warewulf scanning and adding nodes ...
+echo please bring up the compute nodes one by one in order to PXE boot now
+sleep 3
 wwnodescan --netdev=eth0 --ipaddr=172.16.0.1 --netmask=255.255.0.0 --vnfs=centos-6 --bootstrap=`uname -r` --groups=newnodes n[01-10]
 
 
