@@ -30,7 +30,5 @@ chkconfig munge on
 service munge start
 EOF
 
-## rebuild image 
-wwvnfs -y --chroot /var/chroots/centos-6
-## reboot all compute nodes
-pdsh -w `grep eth0 /etc/hosts | awk '{print $1}' | paste -d, -s ` reboot
+## reimage and reboot
+./reim_reboot.sh
