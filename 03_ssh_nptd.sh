@@ -22,6 +22,8 @@ cat >> /var/chroots/centos-6/etc/rc.local << EOF
 chkconfig ntpd on
 service ntpd start
 EOF
+
+## reimage and reboot
 wwvnfs -y --chroot /var/chroots/centos-6
 pdsh -w `grep eth0 /etc/hosts | awk '{print $1}' | paste -d, -s ` reboot
 
