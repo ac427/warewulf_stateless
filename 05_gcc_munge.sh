@@ -7,7 +7,6 @@
 yum --tolerant --installroot /var/chroots/centos-6 -y install `paste -s compute_node_yum_list`
 
 ## configure munge, slurm will need munge for communication
-yum -y install munge
 create-munge-key
 chkconfig munge on
 service munge start
