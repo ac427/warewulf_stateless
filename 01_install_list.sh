@@ -22,4 +22,6 @@ sed -i '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
 
 chkconfig iptables off
 
+echo master is going to reboot now ...
+sleep 3
 reboot
