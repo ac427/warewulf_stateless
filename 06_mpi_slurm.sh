@@ -1,6 +1,12 @@
 #!/bin/bash
 
 ## new gcc
+yum install gmp-devel mpfr-devel libmpc-devel
+wget http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.gz
+
+## rpmbuild using gcc spec file
+
+
 
 ## slurm
 
