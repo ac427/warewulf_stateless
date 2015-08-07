@@ -2,6 +2,7 @@
 
 ## add a testing user, critical step, will sync user account to compute nodes
 ./add_user opera opera1122
+sleep 4
 
 ## install gcc to compute nodes 
 yum --tolerant --installroot /var/chroots/centos-6 -y install `paste -s compute_node_yum_list`
