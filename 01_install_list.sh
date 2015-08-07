@@ -2,17 +2,18 @@
 ##install list on provision node
 ##yum -y groupinstall "Development tools"
 ##yum -y groupinstall "MySQL Database server"
-yum -y install httpd dhcp tftp-server mod_perl tcpdump nfs-utils ntp man finger munge munge-devel tcl gcc
+yum -y install httpd dhcp tftp-server mod_perl tcpdump nfs-utils ntp man finger tcl gcc wget
 ##yum -y install wget unzip emacs git
 wget http://mirrors.mit.edu/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://warewulf.lbl.gov/downloads/repo/warewulf-rhel6.repo -O /etc/yum.repos.d/warewulf-rhel6.repo
 rpm -Uvh epel-release-6-8.noarch.rpm
-yum -y install pdsh
+
+yum -y install pdsh munge munge-devel
 
 echo disabling Selinux ...
 sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
 
-echo downloading and installing warewulf ...
-wget http://warewulf.lbl.gov/downloads/repo/warewulf-rhel6.repo -O /etc/yum.repos.d/warewulf-rhel6.repo
+echo installing warewulf ...
 yum -y install warewulf-provision warewulf-cluster warewulf-provision-server warewulf-vnfs 
 
 ## edit /etc/warewulf/vnfs.conf, uncomment hybridpath= ...
