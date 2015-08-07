@@ -1,0 +1,4 @@
+#!/bin/bash
+
+## reboot all compute nodes
+pdsh -w `grep eth0 /etc/hosts | awk '{print $1}' | paste -d, -s ` reboot
