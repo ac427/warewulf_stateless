@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## add a testing user, critical step, will sync user account to compute nodes
+## add a testing user, critical step, will sync user account including munge to compute nodes 
 ./add_user opera opera1122
 sleep 4
 
