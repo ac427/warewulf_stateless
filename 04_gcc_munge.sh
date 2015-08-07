@@ -31,4 +31,4 @@ service munge start
 EOF
 
 ## reimage and reboot
-./reim_reboot.sh
+./reim_reboot
