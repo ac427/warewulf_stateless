@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## if you don't want to monitor master, gmond is not required
 yum -y install ganglia-gmond ganglia-gmetad ganglia-web
 chkconfig gmetad on
 chkconfig gmond on
