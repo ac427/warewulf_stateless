@@ -9,7 +9,7 @@ wget ‐P ~/rpmbuild/SOURCES http://mirrors.concertpass.com/gcc/releases/gcc-5.2
 cp rpm_specs/* ~/rpmbuild/SPECS
 ## rpmbuild using gcc spec file, replace the HMS with your own name in SPEC file
 rpmbuild -ba ~/rpmbuild/SPECS/gcc-5.2.0.spec
-rpm -ivh ~/rpmbuild/RPMS/x86_64/gcc-5.2.*.rpm
+##rpm -ivh ~/rpmbuild/RPMS/x86_64/gcc-5.2.*.rpm
 
 ## slurm
 wget -P ~/rpmbuild/SOURCES https://github.com/SchedMD/slurm/archive/slurm-14-11-8-1.tar.gz
@@ -24,5 +24,5 @@ make install
 ## openmpi, configed to do srun in slurm
 wget -P ~/rpmbuild/SOURCES http://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.8.tar.gz
 rpmbuild -ba ~/rpmbuild/SPECS/openmpi-1.8.8.spec
-rpm -ivh ~/rpmbuild/RPMS/x86_64/openmpi-1.8*.rpm
+##rpm -ivh ~/rpmbuild/RPMS/x86_64/openmpi-1.8*.rpm
 ## now we can kick start the app stack and module tree
