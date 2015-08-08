@@ -6,6 +6,7 @@
 * /home, /opt, /usr/local are NFS mounted from master node
 * Lmod module environment
 * Slurm job scheduler
+* OpenMPI
 
 To make yourself a warewulf Linux cluster, do 
 
