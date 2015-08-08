@@ -45,6 +45,7 @@ make install
 cp -rp %{INSTALL_DIR}/ $RPM_BUILD_ROOT/%{INSTALL_DIR}/..
 
 ##create modulefiles
+mkdir -p %{MODULE_DIR}
 rm -rf $RPM_BUILD_ROOT/%{MODULE_DIR}
 mkdir -p $RPM_BUILD_ROOT/%{MODULE_DIR}
 
@@ -86,8 +87,9 @@ local mroot = os.getenv("MODULEPATH_ROOT")
 local mdir = pathJoin(mroot,"MPI", "%{comp_fam}", "%{comp_ver}","%{name}","%{version}")
 prepend_path("MODULEPATH", mdir)
 
-
 EOF
+
+cp %{MODULE_DIR}/%{version}.lua $RPM_BUILD_ROOT/%{MODULE_DIR}/
 
 %files 
 %defattr(-,root,root,-)
