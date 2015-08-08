@@ -3,12 +3,12 @@
 #
 Summary:   Openmpi
 Name:      openmpi
-Version:   1.8.6
+Version:   1.8.8
 Release:   0
 License:   GNU General Public License
 Vendor:    http://www.open-mpi.org
 Group:     system/hpc/mpi
-Source:    openmpi-1.8.6.tar.gz
+Source:    openmpi-1.8.8.tar.gz
 Packager:  HMS- jimi_chu@hms.harvard.edu
 AutoReqProv: no
 
