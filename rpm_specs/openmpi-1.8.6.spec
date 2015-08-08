@@ -38,7 +38,7 @@ mkdir -p %{INSTALL_DIR}
 module purge
 module load gcc/5.2.0
 
-./configure --prefix=%{INSTALL_DIR} --enable-mpirun-prefix-by-default --with-pmi=/opt/centos/apps/slurm/14.11.4
+./configure --prefix=%{INSTALL_DIR} --enable-mpirun-prefix-by-default --with-pmi=/opt/apps/slurm/14.11.8
 make -j12 all 
 make install
  
