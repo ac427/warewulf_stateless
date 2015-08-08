@@ -49,7 +49,7 @@ mkdir -p %{MODULE_DIR}
 rm -rf $RPM_BUILD_ROOT/%{MODULE_DIR}
 mkdir -p $RPM_BUILD_ROOT/%{MODULE_DIR}
 
-cat > $RPM_BUILD_ROOT/%{MODULE_DIR}/%{version}.lua << 'EOF'
+cat > %{MODULE_DIR}/%{version}.lua << 'EOF'
 
 help([[
 The openmpi modulefile defines the following environment variables
