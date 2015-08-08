@@ -16,6 +16,7 @@ cd ~/rpmbuild/SOURCES
 tar xvzf slurm-14-11-8-1.tar.gz
 cd slurm-slurm-14-11-8-1
 ./configure --prefix=/opt/slurm/14.11.8 --sysconfdir=/opt/slurm/14.11.8/etc
+## you will need to configure file slurm.conf using the html tool in doc folder under install directory
 
 ## openmpi, configed to do srun in slurm
 wget -P ~/rpmbuild/SOURCES http://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.8.tar.gz
