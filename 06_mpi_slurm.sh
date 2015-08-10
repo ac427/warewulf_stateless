@@ -19,6 +19,8 @@ cd slurm-slurm-14-11-8-1
 ./configure --prefix=/opt/slurm/14.11.8 --sysconfdir=/opt/slurm/14.11.8/etc
 make 
 make install
+##start slurmd on compute nodes and slurmctld on master node on boot
+
 ## you will need to configure file slurm.conf using the html tool in doc folder under install directory
 
 ## openmpi, configed to do srun in slurm
