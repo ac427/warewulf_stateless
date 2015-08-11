@@ -9,6 +9,7 @@ wget -P ~/rpmbuild/SOURCES https://github.com/SchedMD/slurm/archive/slurm-14-11-
 cd ~/rpmbuild/SOURCES
 ## you can also do rpmbuild -ta slurm*.gz and rpmbuild -install the rpm
 ## configuration guide can also be figured out from the slurm.spec file inside tar file
+# systemctl start nginx.service
 tar xvzf slurm-14-11-8-1.tar.gz
 cd slurm-slurm-14-11-8-1
 ./configure --prefix=/opt/slurm/14.11.8 --sysconfdir=/opt/slurm/14.11.8/etc
