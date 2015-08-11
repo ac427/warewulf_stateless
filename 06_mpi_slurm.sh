@@ -7,7 +7,7 @@ echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 ## slurm
 wget -P ~/rpmbuild/SOURCES https://github.com/SchedMD/slurm/archive/slurm-14-11-8-1.tar.gz
 cd ~/rpmbuild/SOURCES
-## you can also do rpmbuild -ta slurm*.gz and rpmbuild -install the rpm
+## you can also do rpmbuild -ta slurm*.gz and rpm install the rpm
 ## configuration guide can also be figured out from the slurm.spec file inside tar file
 # centos-7 uses: systemctl start xxx.service instead of service
 tar xvzf slurm-14-11-8-1.tar.gz
