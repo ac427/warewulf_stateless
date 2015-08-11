@@ -21,8 +21,8 @@ if [ -d /etc/init.d ]; then
   install -D -m755 etc/init.d.slurm    /etc/init.d/slurm
   install -D -m755 etc/init.d.slurmdbd /etc/init.d/slurmdbd
   mkdir -p "/usr/sbin"
-  ln -s ../../etc/init.d/slurm    /usr/sbin/rcslurm
-  ln -s ../../etc/init.d/slurmdbd /usr/sbin/rcslurmdbd
+  ln -s /etc/init.d/slurm    /usr/sbin/rcslurm
+  ln -s /etc/init.d/slurmdbd /usr/sbin/rcslurmdbd
 fi
 ## this is for centos-7
 if [ -d /usr/lib/systemd/system ]; then
