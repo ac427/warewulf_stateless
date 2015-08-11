@@ -15,6 +15,8 @@ cd slurm-slurm-14-11-8-1
 ./configure --prefix=/opt/slurm/14.11.8 --sysconfdir=/opt/slurm/14.11.8/etc
 make 
 make install
+make install-contrib
+
 ## sample scripts for deamon service and configuration
 ##cp -r etc /opt/slurm/14.11.8/
 if [ -d /etc/init.d ]; then
