@@ -34,20 +34,45 @@ if [ -d /usr/lib/systemd/system ]; then
   install -D -m755 etc/slurmd.service    /usr/lib/systemd/system/slurmd.service
   install -D -m755 etc/slurmdbd.service  /usr/lib/systemd/system/slurmdbd.service
 fi
+# slurm resource config
+install -D -m644 etc/slurm.conf.example /opt/slurm/14.11.8/etc/slurm.conf
 
-install -D -m644 etc/slurm.conf.example /opt/slurm/14.11.8/etc/slurm.conf.example
 install -D -m644 etc/cgroup.conf.example /opt/slurm/14.11.8/etc/cgroup.conf.example
 install -D -m644 etc/cgroup_allowed_devices_file.conf.example /opt/slurm/14.11.8/etc/cgroup_allowed_devices_file.conf.example
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup.release_common.example
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup/release_freezer
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup/release_cpuset
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup/release_memory
-install -D -m644 etc/slurmdbd.conf.example /opt/slurm/14.11.8/etc/slurmdbd.conf.example
+
+# slurm database config
+install -D -m644 etc/slurmdbd.conf.example /opt/slurm/14.11.8/etc/slurmdbd.conf
+
 install -D -m755 etc/slurm.epilog.clean /opt/slurm/14.11.8/etc/slurm.epilog.clean
 install -D -m755 contribs/sgather/sgather /opt/slurm/14.11.8/bin/sgather
 install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
 ##start slurmd on compute nodes and slurmctld on master node on boot
 
 ## you will need to configure file slurm.conf using the html tool in doc folder under install directory
+## and slurmdbd.conf
 
+## create slurm admin user
+echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
+echo "slurm:x:2000:slurm >> /etc/group
+pwconv
+
+mkdir /var/spool/slurm
+chown -R slurm:slurm /var/spool/slurm
+mkdir /var/log/slurm
+chown -R slurm:slurm /var/log/slurm
+
+## mysql database for slurm
+mysqladmin -u root password 'password'
+mysql -u root -ppassword << EOF
+create database slurm_acct_db;
+create user 'slurm'@'localhost';
+set password for 'slurm'@'localhost' = password('MyStoragePassword');
+grant usage on *.* to 'slurm'@'localhost';
+grant all privileges on slurm_acct_db.* to 'slurm'@'localhost';
+flush privileges;
+EOF
 
