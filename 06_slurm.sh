@@ -65,7 +65,7 @@ chown -R slurm:slurm /var/spool/slurm
 mkdir /var/log/slurm
 chown -R slurm:slurm /var/log/slurm
 
-## mysql database for slurm
+## mysql database for slurm, need to agree with slurmdbd.conf
 mysqladmin -u root password 'password'
 mysql -u root -ppassword << EOF
 create database slurm_acct_db;
