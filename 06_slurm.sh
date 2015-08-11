@@ -17,7 +17,7 @@ make
 make install
 make install-contrib
 ## somehow this need a fix
-sed -i 's+${exec_prefix}+/opt/slurm/14.11.8+g' *
+sed -i 's+${exec_prefix}+/opt/slurm/14.11.8+g' etc/*
 
 ## sample scripts for deamon service and configuration
 ##cp -r etc /opt/slurm/14.11.8/
