@@ -18,6 +18,7 @@ make install
 ## sample scripts for deamon service and configuration
 cp -r etc /opt/slurm/14.11.8/
 ##start slurmd on compute nodes and slurmctld on master node on boot
+## you will need to configure file slurm.conf using the html tool in doc folder under install directory
 
 ## new gcc
 wget ‐P ~/rpmbuild/SOURCES http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.gz
@@ -25,9 +26,6 @@ cp rpm_specs/* ~/rpmbuild/SPECS
 ## rpmbuild using gcc spec file, replace the HMS with your own name in SPEC file
 rpmbuild -ba ~/rpmbuild/SPECS/gcc-5.2.0.spec
 ##rpm -ivh ~/rpmbuild/RPMS/x86_64/gcc-5.2.*.rpm
-
-
-## you will need to configure file slurm.conf using the html tool in doc folder under install directory
 
 ## openmpi, configed to do srun in slurm
 wget -P ~/rpmbuild/SOURCES http://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.8.tar.gz
