@@ -57,7 +57,7 @@ install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
 
 ## create slurm admin user
 echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
-echo "slurm:x:2000:slurm >> /etc/group
+echo "slurm:x:2000:slurm" >> /etc/group
 pwconv
 
 mkdir /var/spool/slurm
