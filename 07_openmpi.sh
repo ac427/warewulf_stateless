@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yum install -y gmp-devel mpfr-devel libmpc-devel
 ## new gcc
 wget ‐P ~/rpmbuild/SOURCES http://mirrors.concertpass.com/gcc/releases/gcc-5.2.0/gcc-5.2.0.tar.gz
 cp rpm_specs/* ~/rpmbuild/SPECS
