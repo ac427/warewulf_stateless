@@ -15,5 +15,6 @@ To make yourself a warewulf Linux cluster, do
 3. you have a warewulf cluster!
 
 Current testing status:
+
 1. tested to step 5
 2. step 6 slurm configuration is in progress
