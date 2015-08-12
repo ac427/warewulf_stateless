@@ -3,6 +3,7 @@
 wwinit ALL
 
 ## warewulf mysql set up
+mysqladmin -u root password 'password'
 
 echo warewulf making chroot ... 
 wwmkchroot centos-6 /var/chroots/centos-6
