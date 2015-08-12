@@ -70,7 +70,7 @@ export LD_LIBRARY_PATH=/opt/slurm/14.11.8/lib:$LD_LIBRARY_PATH
 if [ -z "$MANPATH" ] ; then
  export MANPATH=:
 fi
-export MANPATH=/opt/slurm/14.11.8/share/man$MANPATH
+export MANPATH=/opt/slurm/14.11.8/share/man:$MANPATH
 EOF
 
 chmod +x /etc/profile.d/slurm.sh
