@@ -2,6 +2,8 @@
 ## first init, vnfs will fail, but will set /etc/fstab correct, wierd?
 wwinit ALL
 
+## warewulf mysql set up
+
 echo warewulf making chroot ... 
 wwmkchroot centos-6 /var/chroots/centos-6
 
