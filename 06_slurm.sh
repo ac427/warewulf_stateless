@@ -30,8 +30,8 @@ if [ -d /etc/init.d ]; then
   ln -s /etc/init.d/slurm    /usr/sbin/rcslurm
   ln -s /etc/init.d/slurmdbd /usr/sbin/rcslurmdbd
   
-  cp /etc/init.d/slurm /var/chroots/centos-6/etc/init.d/
-  cp /usr/sbin/rcslurm /var/chroots/centos-6/usr/sbin/
+  cp /etc/init.d/slurm /var/chroots/centos-6/etc/init.d/slurm
+  cp /usr/sbin/rcslurm /var/chroots/centos-6/usr/sbin/rcslurm
 fi
 ## this is for centos-7
 if [ -d /usr/lib/systemd/system ]; then
