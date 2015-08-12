@@ -49,4 +49,4 @@ cp /etc/profile.d/modules.* /var/chroots/centos-6/etc/profile.d
 cp /etc/profile.d/z00_* /var/chroots/centos-6/etc/profile.d
 
 ## reimage vnfs
-./reim_reboot
+~/bin/reim_reboot
