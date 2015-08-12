@@ -4,6 +4,11 @@ wwinit ALL
 
 ## warewulf mysql set up
 mysqladmin -u root password 'password'
+##sed "s/aaa=.*/aaa=xxx/g"
+sed 's/database user*/database user = root/g' /etc/warewulf/database.conf
+sed 's/database password*/database password = password/g'  /etc/warewulf/database.conf
+
+sed 's/database password*/database password = password/g' /etc/warewulf/database-root.conf
 
 echo warewulf making chroot ... 
 wwmkchroot centos-6 /var/chroots/centos-6
