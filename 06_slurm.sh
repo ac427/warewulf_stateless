@@ -57,9 +57,10 @@ install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
 ## and slurmdbd.conf
 
 ## create slurm admin user
-echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
-echo "slurm:x:2000:slurm" >> /etc/group
-pwconv
+##echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
+##echo "slurm:x:2000:slurm" >> /etc/group
+##pwconv
+~/bin/add_user slurm opera1122
 
 ## same to the image
 mkdir /var/spool/slurm
@@ -68,7 +69,7 @@ mkdir /var/log/slurm
 chown -R slurm:slurm /var/log/slurm
 
 ## mysql database for slurm, need to agree with slurmdbd.conf
-mysqladmin -u root password 'password'
+
 mysql -u root -ppassword << EOF
 create database slurm_acct_db;
 create user 'slurm'@'localhost';
