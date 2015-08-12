@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## add a testing user, critical step, will sync user account including munge to compute nodes 
-./add_user opera opera1122
+~/bin/add_user opera opera1122
 sleep 4
 
 ## install gcc to compute nodes 
