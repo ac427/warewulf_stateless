@@ -21,6 +21,7 @@ yum -y install warewulf-provision warewulf-cluster warewulf-provision-server war
 # fix version 3.6 bug in wwsh and wwvnfs
 sed -i '29idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};' /usr/bin/wwsh
 sed -i '267idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};' /usr/bin/wwvnfs
+
 ## edit /etc/warewulf/vnfs.conf, uncomment hybridpath= ...
 echo turnning on hybridpath in /etc/warewulf/vnfs.conf ...
 sed -i '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
