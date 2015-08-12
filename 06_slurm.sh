@@ -1,5 +1,5 @@
 #!/bin/bash
-## openmpi will depend on slurm, so install slurm first and then openmpi
+## openmpi will depend on slurm pmi header, so install slurm first and then openmpi
 yum install -y rpm-build redhat-rpm-config
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
@@ -20,7 +20,8 @@ make install-contrib
 sed -i 's+${exec_prefix}+/opt/slurm/14.11.8+g' etc/*
 
 ## sample scripts for deamon service and configuration
-##cp -r etc /opt/slurm/14.11.8/
+
+## do same to the image, omit slurmdbd
 if [ -d /etc/init.d ]; then
   install -D -m755 etc/init.d.slurm    /etc/init.d/slurm
   install -D -m755 etc/init.d.slurmdbd /etc/init.d/slurmdbd
@@ -34,7 +35,7 @@ if [ -d /usr/lib/systemd/system ]; then
   install -D -m755 etc/slurmd.service    /usr/lib/systemd/system/slurmd.service
   install -D -m755 etc/slurmdbd.service  /usr/lib/systemd/system/slurmdbd.service
 fi
-# slurm resource config
+# slurm resource config, need manual config
 install -D -m644 etc/slurm.conf.example /opt/slurm/14.11.8/etc/slurm.conf
 
 install -D -m644 etc/cgroup.conf.example /opt/slurm/14.11.8/etc/cgroup.conf.example
@@ -50,7 +51,7 @@ install -D -m644 etc/slurmdbd.conf.example /opt/slurm/14.11.8/etc/slurmdbd.conf
 install -D -m755 etc/slurm.epilog.clean /opt/slurm/14.11.8/etc/slurm.epilog.clean
 install -D -m755 contribs/sgather/sgather /opt/slurm/14.11.8/bin/sgather
 install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
-##start slurmd on compute nodes and slurmctld on master node on boot
+## start slurmd on compute nodes and slurmctld on master node on boot
 
 ## you will need to configure file slurm.conf using the html tool in doc folder under install directory
 ## and slurmdbd.conf
@@ -60,6 +61,7 @@ echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
 echo "slurm:x:2000:slurm" >> /etc/group
 pwconv
 
+## same to the image
 mkdir /var/spool/slurm
 chown -R slurm:slurm /var/spool/slurm
 mkdir /var/log/slurm
