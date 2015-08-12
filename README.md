@@ -22,7 +22,7 @@ Current testing status:
 
 NOTE:
 warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
-
+##
 wwvnfs --root /var/chroots/cent6
 Using 'cent6' as the VNFS name
 Creating VNFS image from cent6
