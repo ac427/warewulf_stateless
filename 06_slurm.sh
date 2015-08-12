@@ -87,19 +87,7 @@ cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 ##pwconv
 ~/bin/add_user slurm opera1122
 
-## same to the image
-mkdir /var/spool/slurm
-chown -R slurm:slurm /var/spool/slurm
-mkdir /var/log/slurm
-chown -R slurm:slurm /var/log/slurm
-
-mkdir /var/chroots/centos-6/var/spool/slurm
-chown -R slurm:slurm /var/chroots/centos-6/var/spool/slurm
-mkdir /var/chroots/centos-6/var/log/slurm
-chown -R slurm:slurm /var/chroots/centos-6/var/log/slurm
-
 ## mysql database for slurm, need to agree with slurmdbd.conf
-
 mysql -u root -ppassword << EOF
 create database slurm_acct_db;
 create user 'slurm'@'localhost';
