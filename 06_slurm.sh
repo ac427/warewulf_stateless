@@ -29,12 +29,17 @@ if [ -d /etc/init.d ]; then
   mkdir -p "/usr/sbin"
   ln -s /etc/init.d/slurm    /usr/sbin/rcslurm
   ln -s /etc/init.d/slurmdbd /usr/sbin/rcslurmdbd
+  
+  cp /etc/init.d/slurm /var/chroots/centos-6/etc/init.d/
+  cp /usr/sbin/rcslurm /var/chroots/centos-6/usr/sbin/
 fi
 ## this is for centos-7
 if [ -d /usr/lib/systemd/system ]; then
   install -D -m755 etc/slurmctld.service /usr/lib/systemd/system/slurmctld.service
   install -D -m755 etc/slurmd.service    /usr/lib/systemd/system/slurmd.service
   install -D -m755 etc/slurmdbd.service  /usr/lib/systemd/system/slurmdbd.service
+  
+  cp /usr/lib/systemd/system/slurmd.service /var/chroots/centos-6/usr/lib/systemd/system/
 fi
 # slurm resource config, need manual config
 install -D -m644 etc/slurm.conf.example /opt/slurm/14.11.8/etc/slurm.conf
@@ -68,6 +73,11 @@ mkdir /var/spool/slurm
 chown -R slurm:slurm /var/spool/slurm
 mkdir /var/log/slurm
 chown -R slurm:slurm /var/log/slurm
+
+mkdir /var/chroots/centos-6/var/spool/slurm
+chown -R slurm:slurm /var/chroots/centos-6/var/spool/slurm
+mkdir /var/chroots/centos-6/var/log/slurm
+chown -R slurm:slurm /var/chroots/centos-6/var/log/slurm
 
 ## mysql database for slurm, need to agree with slurmdbd.conf
 
