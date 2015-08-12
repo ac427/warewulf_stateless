@@ -61,22 +61,21 @@ install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
 cat > /etc/profile.d/slurm.sh << EOF
 #!/bin/sh
 export PATH=/opt/slurm/14.11.8/bin:/opt/slurm/14.11.8/sbin:$PATH
+
 if [ -z "$LD_LIBRARY_PATH" ]; then
- LD_LIBRARY_PATH=/opt/slurm/14.11.8/lib
-else
- LD_LIBRARY_PATH=/opt/slurm/14.11.8/lib:$LD_LIBRARY_PATH
+ export LD_LIBRARY_PATH=:
 fi
-export LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/slurm/14.11.8/lib:$LD_LIBRARY_PATH
 
 if [ -z "$MANPATH" ] ; then
- MANPATH=/opt/slurm/14.11.8/share/man
-else
- MANPATH=/opt/slurm/14.11.8/share/man$MANPATH
+ export MANPATH=:
 fi
-export MANPATH
+export MANPATH=/opt/slurm/14.11.8/share/man$MANPATH
 EOF
+
 chmod +x /etc/profile.d/slurm.sh
 cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
+
 ## start slurmd on compute nodes and slurmctld on master node on boot
 
 ## you will need to configure file slurm.conf using the html tool in doc folder under install directory
