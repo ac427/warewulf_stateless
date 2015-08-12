@@ -24,7 +24,7 @@ service ntpd start
 EOF
 
 ## reimage and reboot
-./reim_reboot
+~/bin/reim_reboot
 
 
 
