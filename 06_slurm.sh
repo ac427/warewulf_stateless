@@ -1,6 +1,7 @@
 #!/bin/bash
 ## openmpi will depend on slurm pmi header, so install slurm first and then openmpi
 yum install -y rpm-build redhat-rpm-config mysql-devel
+# mysql-devel is needed for slurm database plugin
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
