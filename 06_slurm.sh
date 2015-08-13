@@ -43,6 +43,8 @@ if [ -d /usr/lib/systemd/system ]; then
 fi
 # slurm resource config, need manual config
 install -D -m644 etc/slurm.conf.example /opt/slurm/14.11.8/etc/slurm.conf
+# slurm database config
+install -D -m644 etc/slurmdbd.conf.example /opt/slurm/14.11.8/etc/slurmdbd.conf
 
 install -D -m644 etc/cgroup.conf.example /opt/slurm/14.11.8/etc/cgroup.conf.example
 install -D -m644 etc/cgroup_allowed_devices_file.conf.example /opt/slurm/14.11.8/etc/cgroup_allowed_devices_file.conf.example
@@ -50,10 +52,6 @@ install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup/release_freezer
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup/release_cpuset
 install -D -m755 etc/cgroup.release_common.example /opt/slurm/14.11.8/etc/cgroup/release_memory
-
-# slurm database config
-install -D -m644 etc/slurmdbd.conf.example /opt/slurm/14.11.8/etc/slurmdbd.conf
-
 install -D -m755 etc/slurm.epilog.clean /opt/slurm/14.11.8/etc/slurm.epilog.clean
 install -D -m755 contribs/sgather/sgather /opt/slurm/14.11.8/bin/sgather
 install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
@@ -78,8 +76,13 @@ cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 
 ## start slurmd on compute nodes and slurmctld on master node on boot
 
-## you will need to configure file slurm.conf using the html tool in doc folder under install directory
-## and slurmdbd.conf
+echo @
+echo @
+echo you will need to configure file slurm.conf 
+echo using the html tool in doc folder under install 
+echo directory and slurmdbd.conf
+echo @
+echo @
 
 ## create slurm admin user
 ##echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
