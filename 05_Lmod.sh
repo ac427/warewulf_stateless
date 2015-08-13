@@ -24,18 +24,18 @@ cp /opt/apps/lmod/lmod/init/cshrc /etc/profile.d/modules.csh
 
 ## standard set of module
 mkdir -p /opt/apps/modulefiles/Core
-cat > /opt/apps/modulefiles/Core/StdEnv.lua << EOF
+cat > /opt/apps/modulefiles/Core/StdEnv.lua << 'EOF'
 load("lmod")
 EOF
 
-cat > /etc/profile.d/z00_StdEnv.sh << EOF
+cat > /etc/profile.d/z00_StdEnv.sh << 'EOF'
 if [ -z "$__Init_Default_Modules" -o -z "$LD_LIBRARY_PATH" ]; then
   __Init_Default_Modules=1; export __Init_Default_Modules;
   module getdefault default || module load StdEnv
 fi
 EOF
 
-cat > /etc/profile.d/z00_StdEnv.csh << EOF
+cat > /etc/profile.d/z00_StdEnv.csh << 'EOF'
 if ( ! $?__Init_Default_Modules || ! $?LD_LIBRARY_PATH ) then
   module getdefault default
   if ( $status != 0 ) then
