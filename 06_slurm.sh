@@ -100,8 +100,8 @@ EOF
 echo @
 echo @
 echo you will need to edit configuration file slurm.conf and slurmdbd.conf
-echo using the html tool in doc folder under install directory 
-echo after done reimage and reboot master and compute nodes
+echo using the html tool in doc folder under install directory,
+echo after done reimage vnfs and reboot master and compute nodes
 echo @
 echo @
 
