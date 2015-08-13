@@ -21,7 +21,6 @@ make install-contrib
 sed -i 's+${exec_prefix}+/opt/slurm/14.11.8+g' etc/*
 
 ## sample scripts for deamon service and configuration
-
 ## do same to the image, omit slurmdbd
 if [ -d /etc/init.d ]; then
   install -D -m755 etc/init.d.slurm    /etc/init.d/slurm
@@ -75,10 +74,19 @@ chmod +x /etc/profile.d/slurm.sh
 cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 
 ## start slurmd on compute nodes and slurmctld on master node on boot
+## init.d/slurm also starts slurmctld on compute nodes, need fix 
+chkconfig slurm on
+chkconfig slurmdbd on
+
+cat >> /var/chroots/centos-6/etc/rc.local << EOF
+mkdir -p /var/log/slurm
+chown -R slurm:slurm /var/log/slurm
+/opt/slurm/14.11.8/sbin/slurmd -Dvvv &> /var/log/slurm/slurmd.log
+EOF
 
 echo @
 echo @
-echo you will need to configure file slurm.conf 
+echo you will need to edit configuration file slurm.conf 
 echo using the html tool in doc folder under install 
 echo directory and slurmdbd.conf
 echo @
