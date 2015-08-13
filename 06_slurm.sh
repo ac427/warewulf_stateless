@@ -84,17 +84,9 @@ cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 chkconfig slurm on
 chkconfig slurmdbd on
 
-mkdir -p /var/spool/slurm
-chown -R slurm:slurm /var/spool/slurm
-mkdir -p /var/log/slurm
-chown -R slurm:slurm /var/log/slurm
-
 cat >> /var/chroots/centos-6/etc/rc.local << EOF
-mkdir -p /var/spool/slurm
-chown -R slurm:slurm /var/spool/slurm
-mkdir -p /var/log/slurm
-chown -R slurm:slurm /var/log/slurm
-/opt/slurm/14.11.8/sbin/slurmd -Dv &> /var/log/slurm/slurmd.log &
+chkconfig slurm on
+service slurm start
 EOF
 
 echo @
