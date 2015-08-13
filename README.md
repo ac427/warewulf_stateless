@@ -36,4 +36,6 @@ add a line after each of the sanitized PATH assignments (line 29 of wwsh and 267
 ```
 delete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};
 ```
+script 01 takes care of that
+
 reference: https://groups.google.com/a/lbl.gov/forum/#!msg/warewulf/Q8prRTzLuT4/AcL-sxGTvyoJ
