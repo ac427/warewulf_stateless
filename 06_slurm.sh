@@ -88,7 +88,7 @@ mkdir -p /var/spool/slurm
 chown -R slurm:slurm /var/spool/slurm
 mkdir -p /var/log/slurm
 chown -R slurm:slurm /var/log/slurm
-/opt/slurm/14.11.8/sbin/slurmd -Dvvv &> /var/log/slurm/slurmd.log
+/opt/slurm/14.11.8/sbin/slurmd -Dv &> /var/log/slurm/slurmd.log
 EOF
 
 echo @
