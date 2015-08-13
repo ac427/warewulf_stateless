@@ -73,6 +73,12 @@ EOF
 chmod +x /etc/profile.d/slurm.sh
 cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 
+## create slurm admin user
+##echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
+##echo "slurm:x:2000:slurm" >> /etc/group
+##pwconv
+~/bin/add_user slurm opera1122
+
 ## start slurmd on compute nodes and slurmctld on master node on boot
 ## init.d/slurm also starts slurmctld on compute nodes, need fix 
 chkconfig slurm on
@@ -98,12 +104,6 @@ echo using the html tool in doc folder under install directory
 echo after done reimage and reboot master and compute nodes
 echo @
 echo @
-
-## create slurm admin user
-##echo "slurm:x:2000:2000:slurm admin:/home/slurm:/bin/bash" >> /etc/passwd
-##echo "slurm:x:2000:slurm" >> /etc/group
-##pwconv
-~/bin/add_user slurm opera1122
 
 ## mysql database for slurm, need to agree with slurmdbd.conf
 mysql -u root -ppassword << EOF
