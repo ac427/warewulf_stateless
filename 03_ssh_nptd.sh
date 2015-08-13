@@ -13,7 +13,7 @@ cat > /var/chroots/centos-6/etc/ntp.conf << EOF
 driftfile /var/lib/ntp/drift
 restrict default ignore
 restrict 127.0.0.1
-server 172.16.2.250 (this is the master’s ip, compute node sync to master node time)
+server 172.16.2.250 
 restrict 172.16.2.250 nomodify
 includefile /etc/ntp/crypto/pw
 keys /etc/ntp/keys
