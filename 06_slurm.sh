@@ -55,7 +55,7 @@ install -D -m755 etc/slurm.epilog.clean /opt/slurm/14.11.8/etc/slurm.epilog.clea
 install -D -m755 contribs/sgather/sgather /opt/slurm/14.11.8/bin/sgather
 install -D -m755 contribs/sjstat /opt/slurm/14.11.8/bin/sjstat
 
-cat > /etc/profile.d/slurm.sh << EOF
+cat > /etc/profile.d/slurm.sh << 'EOF'
 #!/bin/sh
 export PATH=/opt/slurm/14.11.8/bin:/opt/slurm/14.11.8/sbin:$PATH
 
@@ -84,7 +84,7 @@ cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 chkconfig slurm on
 chkconfig slurmdbd on
 
-cat >> /var/chroots/centos-6/etc/rc.local << EOF
+cat >> /var/chroots/centos-6/etc/rc.local << 'EOF'
 chkconfig slurm on
 service slurm start
 EOF
@@ -99,7 +99,7 @@ echo @
 echo @
 
 ## mysql database for slurm, need to agree with slurmdbd.conf
-mysql -u root -ppassword << EOF
+mysql -u root -ppassword << 'EOF'
 create database slurm_acct_db;
 create user 'slurm'@'localhost';
 set password for 'slurm'@'localhost' = password('password');
