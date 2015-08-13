@@ -23,9 +23,9 @@ Current testing status:
 NOTE:
 warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
 ```
-wwvnfs --root /var/chroots/cent6
-Using 'cent6' as the VNFS name
-Creating VNFS image from cent6
+wwvnfs --root /var/chroots/centos-6
+Using 'centos-6' as the VNFS name
+Creating VNFS image from centos-6
 Building new chroot...
 Building and compressing the final image
 Insecure $ENV{BASH_ENV} while running with -T switch at /usr/bin/wwvnfs line 429.
