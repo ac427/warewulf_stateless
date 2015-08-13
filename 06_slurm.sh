@@ -91,9 +91,10 @@ EOF
 
 echo @
 echo @
-echo you will need to edit configuration file slurm.conf and slurmdbd.conf
+echo you will need to edit configuration file slurm.conf and slurmdbd.conf,
 echo using the html tool in doc folder under install directory,
-echo after done reimage vnfs and reboot master and compute nodes
+echo after done reimage vnfs and reboot master and compute nodes,
+echo and then use sacctmgr to manage slurm accounts.
 echo @
 echo @
 
