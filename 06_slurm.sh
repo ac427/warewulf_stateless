@@ -101,7 +101,7 @@ EOF
 cat > /usr/local/bin/calc_cpu << 'EOF'
 read cpu a b c previdle rest < /proc/stat
 prevtotal=$((a+b+c+previdle))
-sleep 0.5
+sleep 0.25
 read cpu a b c idle rest < /proc/stat
 total=$((a+b+c+idle))
 echo cpu `bc -l <<< "scale=2; 100*( ($total-$prevtotal) - ($idle-$previdle) ) / ($total-$prevtotal)"` % 
