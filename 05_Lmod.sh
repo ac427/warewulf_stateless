@@ -1,7 +1,12 @@
 #!/bin/bash
+yum install -y rpm-build redhat-rpm-config 
+# mysql-devel is needed for slurm database plugin
+mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
 ## system have an old lua without posix and lfs module 
-wget http://sourceforge.net/projects/lmod/files/lua-5.1.4.8.tar.gz/download
+wget -P ~/rpmbuild/SOURCES  http://sourceforge.net/projects/lmod/files/lua-5.1.4.8.tar.gz/download
+cd ~/rpmbuild/SOURCES
 tar xvzf download
 cd lua-5.1.4.8
 ./configure --prefix=/opt/apps/lua/5.1.4
@@ -12,7 +17,8 @@ ln -s /opt/apps/lua/lua/bin/lua /usr/local/bin
 
 ## lmod
 ## git clone https://github.com/TACC/Lmod
-wget https://github.com/TACC/Lmod/archive/6.0.8.tar.gz
+wget -P ~/rpmbuild/SOURCES  https://github.com/TACC/Lmod/archive/6.0.8.tar.gz
+cd ~/rpmbuild/SOURCES
 tar xvzf 6.0.8.tar.gz
 cd Lmod-6.0.8
 ./configure --prefix=/opt/apps
