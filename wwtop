@@ -1,7 +1,11 @@
 #!/bin/bash
-read cpu a b c previdle rest < /proc/stat
-prevtotal=$((a+b+c+previdle))
-sleep 0.5
-read cpu a b c idle rest < /proc/stat
-total=$((a+b+c+idle))
-echo cpu `bc -l <<< "scale=2; 100*( ($total-$prevtotal) - ($idle-$previdle) ) / ($total-$prevtotal)"`% 
+function calc_cpu {
+    read cpu a b c previdle rest < /proc/stat
+    prevtotal=$((a+b+c+previdle))
+    sleep 0.5
+    read cpu a b c idle rest < /proc/stat
+    total=$((a+b+c+idle))
+    echo cpu `bc -l <<< "scale=2; 100*( ($total-$prevtotal) - ($idle-$previdle) ) / ($total-$prevtotal)"`% 
+}
+
+pdsh -w `grep eth0 /etc/hosts | awk '{print $3}' | paste -d, -s ` calc_cpu | sort
