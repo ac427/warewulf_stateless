@@ -1,2 +1,2 @@
 #!/bin/sh
-pdsh -w `grep eth0 /etc/hosts | awk '{print $3}' | paste -d, -s ` "grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {printf \"cpu %.2f%\", usage}' "
+pdsh -w `grep eth0 /etc/hosts | awk '{print $3}' | paste -d, -s ` "grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {printf \"cpu %.2f%\", usage}' " | sort
