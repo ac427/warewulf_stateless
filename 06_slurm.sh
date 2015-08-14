@@ -87,15 +87,6 @@ chkconfig slurm on
 service slurm start
 EOF
 
-echo @
-echo @
-echo "you will need to edit configuration file slurm.conf and slurmdbd.conf,"
-echo "using the html tool in doc folder under install directory,"
-echo "after done reimage vnfs and reboot master and compute nodes,"
-echo "and then use sacctmgr to manage slurm accounts."
-echo @
-echo @
-
 ## mysql database for slurm, need to agree with slurmdbd.conf
 mysql -u root -ppassword << 'EOF'
 create database slurm_acct_db;
@@ -106,3 +97,11 @@ grant all privileges on slurm_acct_db.* to 'slurm'@'localhost';
 flush privileges;
 EOF
 
+echo @
+echo @
+echo "you will need to edit configuration file slurm.conf and slurmdbd.conf,"
+echo "using the html tool in doc folder under install directory,"
+echo "after done reimage vnfs and reboot master and compute nodes,"
+echo "and then use sacctmgr to manage slurm accounts."
+echo @
+echo @
