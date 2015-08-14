@@ -104,7 +104,7 @@ prevtotal=$((a+b+c+previdle))
 sleep 0.5
 read cpu a b c idle rest < /proc/stat
 total=$((a+b+c+idle))
-echo cpu `bc -l <<< "scale=2; 100*( ($total-$prevtotal) - ($idle-$previdle) ) / ($total-$prevtotal)"`% 
+echo cpu `bc -l <<< "scale=2; 100*( ($total-$prevtotal) - ($idle-$previdle) ) / ($total-$prevtotal)"` % 
 EOF
 
 echo @
