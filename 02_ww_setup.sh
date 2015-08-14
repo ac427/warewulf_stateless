@@ -4,6 +4,7 @@
 ## but later slurm will need it
 mysqladmin -u root password 'password'
 mysqladmin create warewulf -p'password'
+## or use: mysql -u root -e "create database warewulf;" -p'password'
 
 ## warewulf mysql set up
 sed -i '/database user/c\database user = root' /etc/warewulf/database.conf
