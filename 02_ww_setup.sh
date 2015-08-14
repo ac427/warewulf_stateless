@@ -12,9 +12,9 @@ wwvnfs --chroot /var/chroots/centos-6
 echo @
 echo @
 echo @
-echo warewulf scanning and adding nodes 
-echo please set compute nodes to PXE boot and bring up them one by one in order
-echo when all nodes are recorded stop(ctl-c) this script
+echo "warewulf scanning and adding nodes"
+echo "please set compute nodes to PXE boot and bring up them one by one in order"
+echo "when all nodes are recorded stop(ctl-c) this script"
 echo @
 echo @
 echo @
