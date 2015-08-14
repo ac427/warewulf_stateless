@@ -5,5 +5,4 @@ gcc
 gcc-c++
 gcc-gfortran
 finger
-sysstat
 bc
