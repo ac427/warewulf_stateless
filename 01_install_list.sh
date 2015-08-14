@@ -4,7 +4,7 @@ cp * ~/bin/
 ##install list on provision node
 ##yum -y groupinstall "Development tools"
 yum -y groupinstall "MySQL Database server"
-yum -y install httpd dhcp tftp-server mod_perl tcpdump nfs-utils ntp man finger tcl gcc rsync sysstat
+yum -y install httpd dhcp tftp-server mod_perl tcpdump nfs-utils ntp man finger tcl gcc rsync sysstat bc
 ##yum -y install wget unzip emacs git
 wget http://mirrors.mit.edu/epel/6/x86_64/epel-release-6-8.noarch.rpm
 wget http://warewulf.lbl.gov/downloads/repo/warewulf-rhel6.repo -O /etc/yum.repos.d/warewulf-rhel6.repo
