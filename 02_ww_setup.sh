@@ -3,7 +3,8 @@
 ## set passwd first time, you can omit this and go straight to wwinit ALL
 ## but later slurm will need it
 mysqladmin -u root password 'password'
-mysql -u root -e "create database warewulf;" -p'password'
+## warewulf creates warewulf database automatically
+## mysql -u root -e "create database warewulf;" -p'password'
 ## or use: mysqladmin create warewulf -p'password'
 
 ## warewulf mysql set up
