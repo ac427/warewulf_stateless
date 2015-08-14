@@ -39,3 +39,6 @@ delete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};
 script 01 takes care of that
 
 reference: https://groups.google.com/a/lbl.gov/forum/#!msg/warewulf/Q8prRTzLuT4/AcL-sxGTvyoJ
+
+NOTE2:
+ALL sql password is  set to 'password', you will need to change it.
