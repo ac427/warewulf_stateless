@@ -55,6 +55,7 @@ redhat-rpm-config
 rpm-build
 sqlite-devel
 suitesparse
+sysstat
 tcl
 tcl-devel
 tmpwatch
