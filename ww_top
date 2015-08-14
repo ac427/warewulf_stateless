@@ -1,2 +1,0 @@
-#!/bin/sh
-pdsh -w `grep eth0 /etc/hosts | awk '{print $3}' | paste -d, -s ` "top -n1 | head -n3 | tail -n1" | sort
