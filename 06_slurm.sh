@@ -3,7 +3,6 @@
 yum install -y mysql-devel
 # mysql-devel is needed for slurm database plugin
 
-
 ## slurm
 wget -P ~/rpmbuild/SOURCES https://github.com/SchedMD/slurm/archive/slurm-14-11-8-1.tar.gz
 cd ~/rpmbuild/SOURCES
