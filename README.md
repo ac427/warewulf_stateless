@@ -16,8 +16,8 @@ To make yourself a warewulf Linux cluster, do
 
 Current testing status:
 
-1. tested to step 5
-2. step 6 slurm configuration is in progress
+1. tested to step 7
+2. step 8 ganglia configuration is in progress
 
 
 NOTE:
