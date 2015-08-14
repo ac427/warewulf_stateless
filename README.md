@@ -18,6 +18,7 @@ Current testing status:
 
 1. tested to step 7
 2. step 8 ganglia configuration is in progress
+3. but you can use wwtop, so ganglia is not needed...
 
 
 NOTE:
