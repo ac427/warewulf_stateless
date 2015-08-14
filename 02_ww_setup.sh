@@ -1,6 +1,7 @@
 #!/bin/bash
 
-## set passwd first time
+## set passwd first time, you can omit this and go straight to wwinit ALL
+## but later slurm will need it
 mysqladmin -u root password 'password'
 mysqladmin create warewulf -p'password'
 
