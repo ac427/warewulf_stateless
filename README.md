@@ -11,8 +11,8 @@
 To make yourself a warewulf Linux cluster, do 
 
 1. configure eth0 as DHCP and eth1 static internal(172.16.2.250 for this demo) on master node, bring up network
-2. run scripts in order, no input needed
-3. you have a warewulf cluster!
+2. run scripts in order, follow instructions
+3. you have a stateless Linux cluster!
 
 Current testing status:
 
