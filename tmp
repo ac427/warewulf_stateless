@@ -2,6 +2,6 @@
 mysqladmin -u root password 'password'
 
 ##sed "s/aaa=.*/aaa=xxx/g"
-sed 's/database user*/database user = root/g' /etc/warewulf/database.conf
-sed 's/database password*/database password = password/g'  /etc/warewulf/database.conf
-sed 's/database password*/database password = password/g' /etc/warewulf/database-root.conf
+sed -i '/database user/c\database user = root' /etc/warewulf/database.conf
+sed -i '/database password/c\database password = password'  /etc/warewulf/database.conf
+sed -i '/database password/c\database password = password' /etc/warewulf/database-root.conf
