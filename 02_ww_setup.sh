@@ -1,13 +1,5 @@
 #!/bin/bash
 
-## warewulf mysql set up
-mysqladmin -u root password 'password'
-
-##sed "s/aaa=.*/aaa=xxx/g"
-sed 's/database user*/database user = root/g' /etc/warewulf/database.conf
-sed 's/database password*/database password = password/g'  /etc/warewulf/database.conf
-sed 's/database password*/database password = password/g' /etc/warewulf/database-root.conf
-
 ## first init, vnfs will fail, but will set /etc/fstab correct, wierd?
 wwinit ALL
 
