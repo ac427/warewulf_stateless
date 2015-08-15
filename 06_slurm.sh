@@ -87,6 +87,9 @@ chkconfig slurm on
 service slurm start
 EOF
 
+mkdir -p /opt/slurm/14.11.8/state
+chown -R slurm:slurm /opt/slurm/14.11.8/state
+
 ## mysql database for slurm, need to agree with slurmdbd.conf
 mysql -u root -ppassword << 'EOF'
 create database slurm_acct_db;
