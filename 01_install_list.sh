@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir -p ~/bin
 cp * ~/bin/
+mkdir -p /usr/local/bin
 cp calc_cpu /usr/local/bin
 ##install list on provision node
 ##yum -y groupinstall "Development tools"
