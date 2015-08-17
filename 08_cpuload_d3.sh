@@ -2,6 +2,7 @@
 mkdir -p /var/www/wwload.com/public_html
 chmod -R 755 /var/www
 cp index.html /var/www/wwload.com/public_html/
+cp data.tsv /var/www/wwload.com/public_html/
 mkdir /etc/httpd/sites-available
 mkdir /etc/httpd/sites-enabled
 
