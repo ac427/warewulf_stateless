@@ -10,7 +10,7 @@ cp /etc/ssh/ssh_known_hosts /var/chroots/centos-6/etc/ssh
 ## install nptd to comupte nodes to sync time with master
 yum --tolerant --installroot /var/chroots/centos-6 -y install ntp
 
-sed -i '/server /c\server 172.16.2.250' /var/chroots/centos-6/etc/ntp.conf
+sed -i '/centos.pool.ntp.org/c\server 172.16.2.250' /var/chroots/centos-6/etc/ntp.conf
 
 cat >> /var/chroots/centos-6/etc/rc.local << EOF
 chkconfig ntpd on
