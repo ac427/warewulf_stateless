@@ -1,3 +1,5 @@
 #!/bin/bash
 
+## shows the cpu utilization of all compute nodes
+
 pdsh -w `grep eth0 /etc/hosts | awk '{print $3}' | paste -d, -s ` calc_cpu | sort
