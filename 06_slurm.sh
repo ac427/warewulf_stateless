@@ -87,6 +87,9 @@ chkconfig slurm on
 service slurm start
 EOF
 
+## reimage vnfs
+wwvnfs -y --chroot /var/chroots/centos-6
+
 mkdir -p /opt/slurm/14.11.8/state
 chown -R slurm:slurm /opt/slurm/14.11.8/state
 
@@ -108,7 +111,7 @@ echo @
 echo "for SECURITY: "
 echo "set StateSaveLocation other than /tmp and write permission only to slurm user"
 echo @
-echo "after done reimage vnfs and reboot master and compute nodes,"
-echo "and then use sacctmgr to manage slurm accounts."
+echo "after done reboot master and compute nodes,"
+echo "and optionally use sacctmgr to manage slurm accounts."
 echo @
 echo @
