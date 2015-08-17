@@ -7,7 +7,7 @@ mkdir /etc/httpd/sites-available
 mkdir /etc/httpd/sites-enabled
 
 cat >> /etc/httpd/conf/httpd.conf <<'EOF'
-IncludeOptional sites-enabled/*.conf
+Include sites-enabled/*.conf
 EOF
 
 cat > /etc/httpd/sites-available/wwload.com.conf << 'EOF'
