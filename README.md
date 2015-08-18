@@ -19,7 +19,7 @@ Current testing status:
 2. step 8 ganglia configuration is in progress
 3. but you can use pdtop, and use D3 library to visulaize cluater utilization, so ganglia is not needed...
 
-D3 bar chart: http://hdnrnzk.me/2012/07/04/creating-a-bar-graph-using-d3js/
+D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
 NOTE:
 warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
