@@ -30,7 +30,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
-var margin = {top: 40, right: 100, bottom: 30, left: 80},
+var margin = {top: 80, right: 100, bottom: 30, left: 80},
     width = 1000 - margin.left - margin.right,
     height = 800 - margin.top - margin.bottom;
 
@@ -64,7 +64,7 @@ d3.tsv("data.tsv", type, function(error, data) {
 
   svg.append("g")
       .attr("class", "x axis")
-	  .attr("transform", "translate(" + margin.left + ",0)")
+	  .attr("transform", "translate(" + margin.left + ", -10)")
 	  .call(xAxis);
 
   svg.append("g")
