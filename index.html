@@ -11,7 +11,7 @@
 }
 
 .axis {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
 }
 
 .axis path,
@@ -21,7 +21,11 @@
   shape-rendering: crispEdges;
 }
 
-.x.axis path {
+/*.x.axis path {
+  display: none;
+}*/
+
+.y.axis path {
   display: none;
 }
 
@@ -60,12 +64,18 @@ d3.tsv("data.tsv", type, function(error, data) {
   if (error) throw error;
 
   y.domain(data.map(function(d) { return d.name; }));
-  x.domain([0, d3.max(data, function(d) { return d.value; })]);
+  x.domain([0, d3.max(data, function(d) { return d.value ; })]);
 
   svg.append("g")
       .attr("class", "x axis")
-	  .attr("transform", "translate(" + margin.left + ", -10)")
-	  .call(xAxis);
+	    .attr("transform", "translate(" + margin.left + ",-10)")
+	    .call(xAxis)
+      .append("text")
+      .attr("font-size","14px")
+      .attr("x", 810)
+      .attr("y", -8)
+      .style("text-anchor", "end")
+      .text("%");
 
   svg.append("g")
       .attr("class", "y axis")
@@ -81,8 +91,7 @@ d3.tsv("data.tsv", type, function(error, data) {
       .attr("width", function(d) { return x(d.value); })
       .attr("y", function(d) { return y(d.name); })
       .attr("height", y.rangeBand());
-	  
-});
+	  });
 
 function type(d) {
   d.value = +d.value;
