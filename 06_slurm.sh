@@ -12,6 +12,7 @@ cd ~/rpmbuild/SOURCES
 tar xvzf slurm-14-11-8-1.tar.gz
 cd slurm-slurm-14-11-8-1
 ./configure --prefix=/opt/slurm/14.11.8 --sysconfdir=/opt/slurm/14.11.8/etc
+## if want berkeley checkpoint restart install BLCR and add --with-blcr=PATH
 make 
 make install
 make install-contrib
