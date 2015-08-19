@@ -28,6 +28,7 @@ TODO:
 2. tune up NFS performance
 2. enable slurm account and configure slurm resource limits
 3. enable Berkeley checkpoint/restart in slurm
+4. install TACC Xalt
 
 NOTE:
 warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
