@@ -17,7 +17,7 @@ Current testing status:
 
 1. tested to step 7
 2. step 8 ganglia configuration is in progress
-3. but you can use pdtop, and use D3 library to visulaize cluater utilization, so ganglia is not needed...
+3. but you can use pdtop, and use D3 library to visulaize cluster utilization, so ganglia is not needed...
 
 D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
