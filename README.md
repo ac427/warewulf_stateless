@@ -24,6 +24,7 @@ D3 bar chart: http://bl.ocks.org/mbostock/3885304
 TODO:
 
 1. mount local /tmp and swap disk
+2. tune up NFS performance
 2. enable slurm account and configure slurm resource limits
 3. enable Berkeley checkpoint/restart in slurm
 
