@@ -5,6 +5,7 @@
 * Lmod module environment
 * Slurm job scheduler
 * OpenMPI
+* local disk /dev/sda on compute nodes are mounted as /scratch
 
 To make yourself a warewulf Linux cluster, do 
 
