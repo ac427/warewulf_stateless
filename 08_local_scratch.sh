@@ -8,3 +8,5 @@ mkdir -p /var/chroots/centos-6/scratch
 cat >> /var/chroots/centos-6/etc/fstab << 'EOF'
 /dev/sda /scratch ext4 defaults 1 1
 EOF
+
+~/bin/reim_reboot
