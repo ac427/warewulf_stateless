@@ -1,7 +1,6 @@
-* warewulf_stateless_provision
 * centos-6.6 x86_64 minimum 
 * warewulf 3.6, stateless provision
-* passwd free ssh for all user across all nodes
+* passwd free ssh for all users across all nodes
 * /home, /opt, /usr/local are NFS mounted from master node
 * Lmod module environment
 * Slurm job scheduler
@@ -9,8 +8,8 @@
 
 To make yourself a warewulf Linux cluster, do 
 
-1. configure eth0 as DHCP and eth1 static internal(172.16.2.250 for this demo) on master node, bring up both network interface
-2. run scripts in order, follow instructions
+1. configure eth0 as DHCP and eth1 static internal(172.16.2.250 for this demo) on master node, bring up both network interfaces, set compute nodes to PXE boot
+2. run scripts in order on master node, follow instructions
 3. you have a stateless Linux cluster!
 
 Current testing status:
@@ -23,8 +22,8 @@ D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
 TODO:
 
-1. mount local /tmp and swap disk
-2. seperate provision node from NFS server
+1. mount local /tmp and swap disk on compute nodes
+2. seperate NFS server from provision node 
 2. tune up NFS performance
 2. enable slurm account and configure slurm resource limits
 3. enable Berkeley checkpoint/restart in slurm
