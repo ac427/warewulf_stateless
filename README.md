@@ -14,20 +14,18 @@ To make yourself a warewulf Linux cluster, do
 
 Current testing status:
 
-1. tested to step 7
-2. step 8 ganglia configuration is in progress
-3. but you can use pdtop, and use D3 library to visulaize cluster utilization, so ganglia is not needed...
+1. tested to step 8
+2. ganglia configuration is in progress, but you can use pdtop, and use D3 library to visulaize cluster utilization, so ganglia is not needed...
 
 D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
 TODO:
 
-1. mount a local /tmp or /scratch disk on compute nodes
-2. seperate NFS server from provision node 
+1. seperate NFS server from provision node 
 2. tune up NFS performance
-2. enable slurm account and configure slurm resource limits
-3. enable Berkeley checkpoint/restart in slurm
-4. install TACC Xalt
+3. enable slurm account and configure slurm resource limits
+4. enable Berkeley checkpoint/restart in slurm
+5. install TACC Xalt
 
 NOTE:
 warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
