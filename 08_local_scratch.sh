@@ -6,7 +6,7 @@ pdsh -w `grep eth0 /etc/hosts | awk '{print $1}' | paste -d, -s ` "echo y | mkfs
 mkdir -p /var/chroots/centos-6/scratch
 
 ## set the sticky bit on scratch
-chmod 1755 /var/chroots/centos-6/scratch
+echo "chmod 1777 /scratch" >> /var/chroots/centos-6/etc/rc.local
 
 cat >> /var/chroots/centos-6/etc/fstab << 'EOF'
 /dev/sda /scratch ext4 defaults 1 1
