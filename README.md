@@ -22,11 +22,12 @@ D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
 TODO:
 
-1. seperate NFS server from provision node 
-2. tune up NFS performance
-3. enable slurm account and configure slurm resource limits
-4. enable Berkeley checkpoint/restart in slurm
-5. install TACC Xalt
+1. add sub-provisioner
+2. seperate NFS server from provision node 
+3. tune up NFS performance
+4. enable slurm account and configure slurm resource limits
+5. enable Berkeley checkpoint/restart in slurm
+6. install TACC Xalt
 
 NOTE:
 warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
