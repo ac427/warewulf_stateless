@@ -21,7 +21,7 @@ sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
 echo installing warewulf ...
 yum -y install warewulf-provision warewulf-cluster warewulf-provision-server warewulf-vnfs 
 
-## also install warewulf-monitor-legacy to image, config wulfd.conf in /etc/sysconfig/wulfd.conf
+## also install warewulf-monitor-legacy to image, config wulfd.conf, wwproxy.conf in /etc/sysconfig/
 
 # fix version 3.6 bug in wwsh, wwvnfs, wwbootstrap
 sed -i "29idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwsh
