@@ -83,10 +83,11 @@ cp /etc/profile.d/slurm.sh /var/chroots/centos-6/etc/profile.d/slurm.sh
 chkconfig slurm on
 chkconfig slurmdbd on
 
-cat >> /var/chroots/centos-6/etc/rc.local << 'EOF'
-chkconfig slurm on
-service slurm start
-EOF
+chroot /var/chroots/centos-6/ chkconfig slurm on
+##cat >> /var/chroots/centos-6/etc/rc.local << 'EOF'
+##chkconfig slurm on
+##service slurm start
+##EOF
 
 ## reimage vnfs
 wwvnfs -y --chroot /var/chroots/centos-6

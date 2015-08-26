@@ -7,7 +7,7 @@ cp pdtop /usr/local/bin
 ##install list on provision node
 ##yum -y groupinstall "Development tools"
 yum -y groupinstall "MySQL Database server"
-yum -y install httpd dhcp tftp-server mod_perl tcpdump nfs-utils ntp man finger tcl gcc rsync bc
+yum -y install httpd dhcp tftp-server mod_perl tcpdump nfs-utils ntp man finger tcl gcc rsync bc wget
 ##yum -y install wget unzip emacs git
 wget http://mirrors.mit.edu/epel/6/x86_64/epel-release-6-8.noarch.rpm
 wget http://warewulf.lbl.gov/downloads/repo/warewulf-rhel6.repo -O /etc/yum.repos.d/warewulf-rhel6.repo
@@ -20,6 +20,7 @@ sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
 
 echo installing warewulf ...
 yum -y install warewulf-provision warewulf-cluster warewulf-provision-server warewulf-vnfs 
+yum -y install warewulf-monitor-legacy warewulf-monitor-legacy-proxy warewulf-monitor-legacy-tools warewulf-monitor-legacy-web
 
 ## also install warewulf-monitor-legacy to image, config wulfd.conf, wwproxy.conf in /etc/sysconfig/
 
