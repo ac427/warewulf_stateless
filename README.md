@@ -6,6 +6,7 @@
 * Slurm job scheduler
 * OpenMPI
 * local disk /dev/sda on compute nodes are mounted as /scratch
+* warewulf-monitor
 
 To make yourself a warewulf Linux cluster, do 
 
@@ -13,10 +14,7 @@ To make yourself a warewulf Linux cluster, do
 2. run scripts in order on master node, follow instructions
 3. you have well functioning Linux cluster!
 
-Current testing status:
-
-1. tested to step 8
-2. ganglia configuration is in progress, but you can use pdtop, and use D3 library to visulaize cluster utilization, so ganglia is not needed...
+Current testing status: tested to step 8
 
 D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
@@ -30,7 +28,7 @@ TODO:
 6. install TACC Xalt
 
 NOTE:
-warewulf 3.6 has a bug in wwsh and wwvnfs script, which will cause errors like this:
+warewulf 3.6 has a bug in wwsh, wwvnfs and wwbootstrap etc, which will cause errors like this:
 ```
 wwvnfs --root /var/chroots/centos-6
 Using 'centos-6' as the VNFS name
