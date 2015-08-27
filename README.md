@@ -16,8 +16,6 @@ To make yourself a warewulf Linux cluster, do
 
 Current testing status: tested to step 8 in VirtualBox
 
-D3 bar chart: http://bl.ocks.org/mbostock/3885304
-
 TODO:
 
 1. add sub-provisioner and node health check(warewulf-nhc)
