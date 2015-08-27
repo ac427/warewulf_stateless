@@ -20,7 +20,7 @@ D3 bar chart: http://bl.ocks.org/mbostock/3885304
 
 TODO:
 
-1. add sub-provisioner
+1. add sub-provisioner and node health check(warewulf-nhc)
 2. seperate NFS server from provision node 
 3. tune up NFS performance
 4. enable slurm account and configure slurm resource limits
