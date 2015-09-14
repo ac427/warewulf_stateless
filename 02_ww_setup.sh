@@ -16,6 +16,7 @@ sed -i '/database password/c\database password = password' /etc/warewulf/databas
 wwinit ALL
 
 echo warewulf making chroot ... 
+#centos-6 is a template provided by warewulf in /usr/libexec/warewulf/wwmkchroot/
 wwmkchroot centos-6 /var/chroots/centos-6
 
 #echo warewulf initiating ...
