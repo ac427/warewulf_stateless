@@ -15,8 +15,9 @@ rpm -Uvh epel-release-6-8.noarch.rpm
 
 yum -y install pdsh munge munge-devel
 
+chkconfig iptables off
 echo disabling Selinux ...
-sed -i 's+=enforcing+=disabled+g' /etc/selinux/config
+sed -i.bak 's+=enforcing+=disabled+g' /etc/selinux/config
 
 echo installing warewulf ...
 yum -y install warewulf-provision warewulf-cluster warewulf-provision-server warewulf-vnfs 
@@ -25,15 +26,14 @@ yum -y install warewulf-monitor-legacy warewulf-monitor-legacy-proxy warewulf-mo
 ## also install warewulf-monitor-legacy to image, config wulfd.conf, wwproxy.conf in /etc/sysconfig/
 
 # fix version 3.6 bug in wwsh, wwvnfs, wwbootstrap
-sed -i "29idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwsh
-sed -i "267idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwvnfs
-sed -i "21idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwbootstrap
+sed -i.bak "29idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwsh
+sed -i.bak "267idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwvnfs
+sed -i.bak "21idelete @ENV{'PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};" /usr/bin/wwbootstrap
 
 ## edit /etc/warewulf/vnfs.conf, uncomment hybridpath= ...
 echo turnning on hybridpath in /etc/warewulf/vnfs.conf ...
-sed -i '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
+sed -i.bak '/# hybridpath /s/^#//g'  /etc/warewulf/vnfs.conf
 
-chkconfig iptables off
 
 echo master is going to reboot now ...
 sleep 3
